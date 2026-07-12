@@ -39,6 +39,15 @@ let currentPage="404";
 let noClickTimer=0;
 let lastSearch="";
 
+function makeCodesCopyable(){
+  const codes=document.getElementsByTagName("code");
+  for(c of codes){
+    let txt=c.innerHTML;
+    c.addEventListener("click",function(){
+      navigator.clipboard.writeText(txt);
+    });
+  }
+}
 function lerp(from,to,amount){
   return from+(to-from)*amount;
 }
@@ -242,6 +251,7 @@ function openPage(p){
   }
   let placeholder=document.createElement("p");
   addElement(placeholder);
+  makeCodesCopyable();
 }
 function toggleDropdown(p) {
   return function () {

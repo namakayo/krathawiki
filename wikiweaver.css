@@ -116,6 +116,7 @@ n {
     font-size: 20px;
     width: 200px;
     height: 30px;
+    white-space: nowrap;
     line-height: 30px;
 }
 

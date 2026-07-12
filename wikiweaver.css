@@ -78,6 +78,7 @@ body {
 #navbut img {
     width: 40px;
     height: 40px;
+    opacity: 0.5;
 }
 .cbut {
     width: 50px;
@@ -188,7 +189,7 @@ dl {
   gap: 12px 24px;
   margin: 10px;
   background-color: var(--bg);
-  border: 4px solid var(--sec);
+  border: 4px solid var(--maincol);
   padding: 5px;
   border-radius: 8px;
 }

@@ -1,0 +1,452 @@
+{"main":
+  {
+    "title":"Main Page",
+    "contents":[
+      {
+        "section":"Welcome to the KRATHA Wiki!",
+        "hidden":true
+      },
+      {
+        "txt":"This is an official wiki for the mindustry mod: KRATHA!n!nThis wiki is not finished! There will be more pages.!n!n!*Use the button at the top left to navigate to other pages.*!"
+      },
+      {
+        "txt":"!-Wiki version: 0.21!n!nIf this number is lower than the mod version, then wait for the wiki to be updated.-!"
+      },
+      {
+        "txt":"!-Handwritten by namakayo-!"
+      }
+    ]
+  },
+  "changelogs":{
+    "title":"Changelogs",
+    "contents":[
+      {
+        "txt":"Nothing's here...wait for 0.3."
+      },
+      {
+        "txt":"!-Older updates are not documented.-!"
+      }
+    ]
+  },
+  "guide":{
+    "title":"Guide",
+    "contents":[
+      {
+        "section":"Guide"
+      },
+      {
+        "txt":"This is an editor guide for KRATHA. Not a survival/campaign guide."
+      },
+      {
+        "section":"Ancient Payload Launcher"
+      },
+      {
+        "txt":"Ancient paylod launcher can not be configured by default, even in the editor."
+      },
+      {
+        "txt":"Run !`Vars.content.block(\"kratha-ancient-payload-launcher\").letConfig=true`!!nin the console and then you'll be able to configure it.!n!nThis automatically reset to !`false`! when you relaunch the game even if you save the map when its set to !`true`!, so dont worry about setting it back to !`false`!."
+      },
+      {
+        "section":"Control Panel Console"
+      },
+      {
+        "txt":"This is a guide to set a Control Panel's item requirement and the hacking time using console."
+      },
+      {
+        "txt":"!*To set hacking time*!"
+      },
+      {
+        "txt":"You simply set the control panel build's !`hackTime`! to whatever. The default is 10.!nThis is set in seconds."
+      },
+      {
+        "txt":"!*To set item requirement*!"
+      },
+      {
+        "txt":"This is more complicated. All control panel in a single map have the same list of 4 items called !`chip`!"
+      },
+      {
+        "dlist":{
+          "contents":[
+            {
+              "txt":"Field",
+              "desc":"Default value"
+            },
+            {
+              "txt":"chip1",
+              "desc":"kratha-krathite"
+            },
+            {
+              "txt":"chip2",
+              "desc":"kratha-guartz"
+            },
+            {
+              "txt":"chip3",
+              "desc":"kratha-spurstone"
+            },
+            {
+              "txt":"chip4",
+              "desc":"kratha-cobalt"
+            }
+          ],
+          "boldTop":true,
+          "code":true
+        }
+      },
+      {
+        "txt":"!-^ This is stored in the block itself, not individual buildings.-!"
+      },
+      {
+        "txt":"To set the item requirement, you set these individually on control panel's build:"
+      },
+      {
+        "list":{
+          "contents":[
+            "reqChip1","reqChip2","reqChip3","reqChip4"
+          ],
+          "code":true
+        }
+      },
+      {
+        "txt":"All of these have a default of 0 which mean doesn't require anything."
+      },
+      {
+        "txt":"The amount of item required depends on the build's !`reqChip`!, the item type that is required depends on the block's !`chip`!."
+      },
+      {
+        "txt":"Example: if you set the build's !`reqChip1`! to be 20 and !`reqChip2`! to be 10, then modify the block's !`chip1`! to !`kratha-cobalt`! via data patch, the control panel will require 20 cobalts and 10 guartz."
+      },
+      {
+        "txt":"!-(!`reqChip`!s are saved. It wont reset to 0 if you save the map.)-!"
+      },
+      {
+        "txt":"This means that only 4 type of items is supported in one map. I am not adding more until i need more."
+      },
+      {
+        "section":"Parallaxed floor"
+      },
+      {
+        "txt":"This a weird one. Parallax floor in KRATHA only work if you put a specific block above the parallax floor.!n!nFor example, if you to place kratha-krathagen-deeper, you will need to place kratha-krathagen-deeper-block on top of it, or the floor wont render.!n!nAlways make sure the block is on the floor, and the floor has the block above."
+      }
+    ]
+  },
+  "control-panel":{
+    "title":"Arktera",
+    "contents":[
+      {
+        "section":"Arktera"
+      },
+      {
+        "txt":"Arktera is an ancient fallen faction. Their blocks are all derelict, but can be repaired via control panel.!n!nEvery Arkteran blocks cannot be deconstructed or destroyed.!n!nYou can see Arkteran block's description using a scanner."
+      },
+      {
+        "section":"Ancient message vault"
+      },
+      {
+        "txt":"Ancient message vault is a read-only message block can be read using scanner.!nEditable like a normal message block in the editor.!n!nThey contain the lore of KRATHA, which is for now still vague because i haven't put much of them.!n!/I won't tell you the lore in the wiki though, that wouldn't be fun./!"
+      },
+      {
+        "section":"Control Panel"
+      },
+      {
+        "txt":"Control panel is a 4x4 Arktera block."
+      },
+      {
+        "img":{
+          "src":"controlPanel.png",
+          "width":100
+        }
+      },
+      {
+        "txt":"Control panel can be hacked using logger. After hacked, an event will happen.!n!nMost of the time, the event is just repairing derelict blocks, but it could be anything, as it is defined by a local wproc."
+      },
+      {
+        "txt":"The item requirement and hacking time of a control panel can be set using console. A tutorial for that can be found !LINK!",
+        "link":"guide",
+        "linkSection":"Control Panel Console",
+        "partLink":true,
+        "linkText":"here."
+      }
+    ]
+  },
+  "terraplasm-patching":
+  {
+    "title":"Terraplasm Patching",
+    "contents":[
+      {
+        "section":"Introduction"
+      },
+      {
+        "txt":"Terraplasm can only grow blocks that its allowed to. By default, nothing is allowed."
+      },
+      {
+        "txt":"This also means even roots aren't allowed to be grown. To fix this, you use data patch to modify what is allowed to be grown."
+      },
+      {
+        "txt":"Example:!n!`block.kratha-heart.allowRoot:true!nblock.kratha-root.allowRoot:true`!"
+      },
+      {
+        "txt":"!-Only heart and root because they're the only one who can grow blocks. Heart can only grow root, root grows everything else.-!"
+      },
+      {
+        "txt":"Allow everything template:!n!`block.kratha-heart.allowRoot:true!nblock.kratha-root.allowRoot:true!nblock.kratha-root.allowDrill:true!nblock.kratha-root.allowEye:true!nblock.kratha-root.allowSkewer:true!nblock.kratha-root.allowCradle:true`!"
+      },
+      {
+        "section":"List of allows"
+      },
+      {
+        "txt":"Currently, there are just 5:"
+      },
+      {
+        "list":{
+          "contents":["allowRoot","allowDrill","allowEye","allowSkewer","allowCradle"],
+          "code":true
+        }
+      },
+      {
+        "txt":"Each of them does a straightforward job, they allow the block to be grown."
+      },
+      {
+        "txt":"Unless you're modifying stats, you'll only need to patch the root because they're the one who needs to be allowed to grow."
+      },
+      {
+        "txt":"(And the heart, as it needs to be allowed to grow root)"
+      },
+      {
+        "txt":"!#There's also !`allowAll`!. however, this will force ALL allows to be true even if you explicitly set an allow to !`false`!.#!!n!-^ This is coming in 0.3, does not exist in 0.21.-!"
+      },
+      {
+        "section":"Marker"
+      },
+      {
+        "txt":"Markers are floor overlay that are visible by default."
+      },
+      {
+        "img":{
+          "src":"markerIngame.jpg",
+          "width":150
+        }
+      },
+      {
+        "txt":"To hide it, use!n!`block.kratha-root.showMarkers:false`!!n!-^ Use after you've finished the map, or you cant see markers in the editor.-!"
+      },
+      {
+        "txt":"Markers allows roots to grow a specific block on where the marker is placed, even if the allow of that block in the root is !`false`!.!nThis let you to make the terraplasm grow a block in just some places.!n!n!/Note that this means if the allow of that block is true, the marker doesnt matter anymore because allow means allowing a passive grow anywhere./!!n!n!LINK! still apply for markers._!",
+        "link":"terraplasm-behavior",
+        "linkSection":"Grow spacing",
+        "partLink":true,
+        "linkText":"Grow spacing"
+      },
+      {
+        "txt":"Marker does not mean the block will exactly grow in that position, as a single marker affect every roots in radius of 4 tiles. This is hardcoded."
+      },
+      {
+        "section":"Advanced"
+      },
+      {
+        "txt":"There are also some fields not mentioned above:"
+      },
+      {
+        "txt":"!*Root fields*!"
+      },
+      {
+        "dlist":{
+          "contents":[
+            {
+              "txt":"Field",
+              "desc":"Default"
+            },
+            {
+              "txt":"eyeSpacing",
+              "desc":"10"
+            },
+            {
+              "txt":"skewerSpacing",
+              "desc":"39"
+            },
+            {
+              "txt":"cradleSpacing",
+              "desc":"22"
+            }
+          ],
+          "boldTop":true,
+          "code":true
+        }
+      },
+      {
+        "dlist":{
+          "contents":[
+            {
+              "txt":"Field",
+              "desc":"Default"
+            },
+            {
+              "txt":"eyeRate",
+              "desc":"0.01"
+            },
+            {
+              "txt":"skewerRate",
+              "desc":"0.01"
+            },
+            {
+              "txt":"cradleRate",
+              "desc":"0.01"
+            }
+          ],
+          "boldTop":true,
+          "code":true
+        }
+      },
+      {
+        "txt":"Spacing is the !LINK! distance in tiles radius.!n!nRate is the chance of the root growing that block when its pulsed, with value between 0 and 1.",
+        "link":"terraplasm-behavior",
+        "linkSection":"Grow spacing",
+        "partLink":true,
+        "linkText":"grow spacing"
+      },
+      {
+        "txt":"!*Heart fields*!"
+      },
+      {
+        "dlist":{
+          "contents":[
+            {
+              "txt":"Field",
+              "desc":"Default"
+            },
+            {
+              "txt":"heartBpm",
+              "desc":"80"
+            },
+            {
+              "txt":"heartPower",
+              "desc":"32"
+            },
+            {
+              "txt":"hideDataPatchWarning",
+              "desc":"false"
+            }
+          ],
+          "boldTop":true,
+          "code":true
+        }
+      },
+      {
+        "txt":"!`heartBpm`! is the amount of pulses every minute.!n!-Do not modify to an extreme degree! Low bpm means blocks will not receive sufficient pulses and could die. High bpm won't do much effect due to pulse delay.-!!n!n!`heartPower`! is the amount of biopulse power the heart outputs.!n!n^ For more details for these two, see !LINK!!n!n!`hideDataPatchWarning`! is used to hide the warning that appears if the mod detects terraplasm is not allowed to grow anything.",
+        "link":"terraplasm-behavior",
+        "linkSection":"Biopulse",
+        "partLink":true,
+        "linkText":"biopulse."
+      }
+    ]
+  },
+  "terraplasm-behavior":
+  {
+    "title":"Terraplasm Behavior",
+    "contents":[
+      {
+        "section":"Biopulse"
+      },
+      {
+        "txt":"Biopulse is the pulse you see traveling through roots."
+      },
+      {
+        "img":{
+          "src":"heartWRoot.jpg",
+          "width":300
+        }
+      },
+      {
+        "txt":"They have a strength which decreases by one everytime it travels into another root.!n!-A terraplastic heart pulses with a default power of 32, which mean it will travel for 32 tiles.-!!n!nTo prevent root traveling backward, root has a timer after it's pulsed before being able to receive pulse again."
+      },
+      {
+        "section":"Growing blocks"
+      },
+      {
+        "txt":"To grow a block, roots turns itself to the block its growing into."
+      },
+      {
+        "txt":"Root requires resources to grow block, the resource required is same as the build cost of the block.!n!nThe root always take item from nearest heart, even if the nearest heart doesn't have the item.!n!-If it doesn't, then it simply can't grow that block-!"
+      },
+      {
+        "txt":"Root uses !LINK! to determine if their position is a valid place for growing a block.",
+        "link":"terraplasm-behavior",
+        "linkSection":"Grow spacing",
+        "partLink":true,
+        "linkText":"grow spacing"
+      },
+      {
+        "txt":"Special case: root always grow a drill instantly if there's an ore under them or if it's next to a wall ore. Drill does not require resource to be grown."
+      },
+      {
+        "section":"Item mechanic"
+      },
+      {
+        "txt":"A root can hold 1 item and 1 type of item.!n!nEvery items has a set destinated on where it wants to go.!nThere are no pathfinding, it just go in a straight line.!n!nOcassionally, items can jump one block between roots to prevent getting stuck."
+      },
+      {
+        "txt":"By default, if an item has no destination, it will head to the nearest heart.!n!nTerraplastic blocks such as spawners and turrets can request item to be send from the heart.!n!nThey will only request the exact amount of items they can hold until they reach max itemCapacity.!n!-They can check if items are on the way so they wont spam item requests-!"
+      },
+      {
+        "section":"Spawner"
+      },
+      {
+        "txt":"Spawners are the unit factory for terraplasm. It will request resource from nearest heart depending on how much it needs.!n!nSpawner spawning progresses everytime it is pulsed, not by a timer."
+      },
+      {
+        "section":"Eyes"
+      },
+      {
+        "txt":"Eyes will stare at the nearest enemy unit.!n!nThe unit that will stared at will receive the Seen status effect.!n!nThis status effect is crucial as every terraplastic turrets can only attack an unit if it has the Seen status effect.!n!nDoes not apply to terraplastic units, they can attack anything even if it doesn't have this status effect."
+      },
+      {
+        "section":"Root pattern"
+      },
+      {
+        "txt":"Root's growing pattern isn't random, it follows this pattern."
+      },
+      {
+        "img":{
+          "src":"rootPatternExample.jpg",
+          "width":200
+        }
+      },
+      {
+        "txt":"Everytime a root (shown as yellow) pulses, it picks one of the 4 cardinal direction: right, up, left, and down (shown as red)"
+      },
+      {
+        "txt":"After it chooses a direction (shown as pink), it checks the amount of roots in a 3x3 square (shown as blue)."
+      },
+      {
+        "txt":"If the number of root (including itself) is less than 4, then it can and (possibly) will grow a root in that direction"
+      },
+      {
+        "txt":"This creates the familiar root-like pattern."
+      },
+      {
+        "section":"Grow spacing"
+      },
+      {
+        "txt":"Have you noticed that skewer never grow next to each other?"
+      },
+      {
+        "img":{
+          "src":"spacedSkewer.jpg",
+          "width": 300
+        }
+      },
+      {
+        "txt":"This is due to a feature called grow spacing."
+      },
+      {
+        "txt":"A root can only grow a block if the same block isn't found under a specific radius.!n!-Exceptions: drill, root-!"
+      },
+      {
+        "txt":"The spacing radius of every blocks can be found !LINK!",
+        "link":"terraplasm-patching",
+        "linkSection":"Advanced",
+        "partLink":true,
+        "linkText":"here."
+      }
+    ]
+  }
+  }

@@ -1,5 +1,5 @@
 :root {
-  --accent: #9E749F;
+  --maincol: #9E749F;
   --light: #D78DD6;
   --subtitle: #C364DB;
   --sec: #8C5A7D;
@@ -38,7 +38,7 @@ body {
 
 #nav {
     box-sizing: border-box;
-    border: 4px solid var(--accent);
+    border: 4px solid var(--maincol);
     border-radius: 16px;
     background-color: var(--bg);
     position: fixed;
@@ -73,7 +73,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--sec);
-    border: 4px solid var(--accent);
+    border: 4px solid var(--maincol);
 }
 #navbut img {
     width: 40px;
@@ -100,7 +100,7 @@ body {
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: var(--accent);
+    background-color: var(--maincol);
     width: 100vw;
     height: 50px;
     z-index: 900;
@@ -142,10 +142,10 @@ pl:active{
 }
 
 a:visited{
-    color: var(--accent);
+    color: var(--maincol);
 }
 a:unvisited{
-    color: var(--accent);
+    color: var(--maincol);
 }
 
 .txt {
@@ -211,10 +211,10 @@ dd {
     background-color: var(--third);
     border: 2px solid var(--third);
     border-radius: 4px;
-    color: var(--accent);
+    color: var(--maincol);
 }
 #search:focus{
-    border-color: var(--accent);
+    border-color: var(--maincol);
     outline: none;
     box-shadow: none;
 }

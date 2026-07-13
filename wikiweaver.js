@@ -327,9 +327,9 @@ function update(){
   if(page==null){
     if(window.location.search){
       const params=new URLSearchParams(window.location.search);
-      let fpage=params.get("at");
-      if(pages[fPage]!=null){
-        openPage(fPage);
+      let x=params.get("at");
+      if(x&&pages[x]!=null){
+        openPage(x);
       }else{
         openPage("main");
       }

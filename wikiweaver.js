@@ -330,6 +330,9 @@ function update(){
       let fpage=("main");
       fPage=params.get("page");
       if(page[fPage]!=null){
+        let p=document.createElement("p")
+        p.innerHTML="THIS IS A TEST: "+fPage
+        addElement(p)
         openPage(fPage);
       }else{
         openPage("main");

@@ -326,7 +326,8 @@ function update(){
   }
   if(page==null){
     if(window.location.search){
-      let fPage="guide";
+      const params=new URLSearchParams(window.location.search);
+      let fpage=params.get("at");
       if(pages[fPage]!=null){
         openPage(fPage);
       }else{

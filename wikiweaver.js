@@ -326,14 +326,9 @@ function update(){
   }
   if(page==null){
     if(window.location.search){
-      const params=new URLSearchParams(window.location.search);
-      let fpage=("main");
-      let p=document.createElement("p")
-      p.innerHTML="THIS IS A TEST: "+fPage
-      addElement(p)
-      fPage=params.get("page");
+      let fPage="guide";
       if(pages[fPage]!=null){
-        openPage("main");
+        openPage(fPage);
       }else{
         openPage("main");
       }

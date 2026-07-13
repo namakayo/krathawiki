@@ -325,7 +325,18 @@ function update(){
     fetch("pages.json").then(r=>r.json()).then(data=>parseStyle(data));
   }
   if(page==null){
-    openPage("main");
+    if(window.location.search){
+      const params=new URLSearchParams(window.location.search);
+      let fpage=("main");
+      fPage=params.get("page");
+      if(page[fPage]!=null){
+        openPage(fPage);
+      }else{
+        openPage("main");
+      }
+    }else{
+      openPage("main");
+    }
   }
   if(navn.children.length<=1){
     setupNav();

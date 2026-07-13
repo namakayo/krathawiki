@@ -326,13 +326,13 @@ function update(){
   }
   if(page==null){
     if(window.location.search){
+      let p=document.createElement("p")
+      p.innerHTML="THIS IS A TEST: "+fPage
+      addElement(p)
       const params=new URLSearchParams(window.location.search);
       let fpage=("main");
       fPage=params.get("page");
-      if(page[fPage]!=null){
-        let p=document.createElement("p")
-        p.innerHTML="THIS IS A TEST: "+fPage
-        addElement(p)
+      if(pages[fPage]!=null){
         openPage("main");
       }else{
         openPage("main");

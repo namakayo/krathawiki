@@ -333,7 +333,7 @@ function update(){
         let p=document.createElement("p")
         p.innerHTML="THIS IS A TEST: "+fPage
         addElement(p)
-        openPage(fPage);
+        openPage("main");
       }else{
         openPage("main");
       }

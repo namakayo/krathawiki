@@ -129,9 +129,7 @@ function parseStyle(all){
   pages=all;
 }
 function openPage(p){
-  console.log("tried to open: "+p)
   if(!(p in pages))return;
-  console.log("opened page: "+p)
   clearPage();
   page=p;
   currentPage=p;
@@ -330,7 +328,6 @@ function update(){
     if(window.location.search){
       const params=new URLSearchParams(window.location.search);
       let x=params.get("at");
-      console.log(x);
       if(x&&pages[x]!=null){
         openPage(x);
       }else{

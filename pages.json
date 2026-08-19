@@ -10,7 +10,7 @@
         "txt":"This is an official wiki for the mindustry mod: KRATHA!n!nThis wiki is not finished! There will be more pages.!n!n!*Use the button at the top left to navigate to other pages.*!"
       },
       {
-        "txt":"!-Wiki version: 0.21!n!nIf this number is lower than the mod version, then wait for the wiki to be updated.-!"
+        "txt":"!-Wiki version: 0.3!n!nIf this number is lower than the mod version, then wait for the wiki to be updated.-!"
       },
       {
         "txt":"!-Handwritten by namakayo-!"
@@ -21,10 +21,25 @@
     "title":"Changelogs",
     "contents":[
       {
-        "txt":"Nothing's here...wait for 0.3."
+        "section":"0.3"
       },
       {
-        "txt":"!-Older updates are not documented.-!"
+        "list":{
+          "contents":[
+            "Sector: Seaport",
+            "Terraplastic turret: Trim",
+            "Arktera (10 environments, 9 blocks)",
+            "Added pathfinding for items in terraplasm.",
+            "Bugfixes."
+          ]
+        }
+      },
+      {
+        "section":"Previous versions",
+        "hidden":true
+      },
+      {
+        "txt":"Older versions are not documented."
       }
     ]
   },
@@ -93,7 +108,7 @@
         }
       },
       {
-        "txt":"!-^ This is stored in the block itself, not individual buildings.-!"
+        "txt":"!-^ This is stored in the block itself, not individual buildings.-!!nDo not set the same item in different chip slot."
       },
       {
         "txt":"To set the item requirement, you set these individually on control panel's build:"
@@ -188,17 +203,17 @@
         "txt":"!-Only heart and root because they're the only one who can grow blocks. Heart can only grow root, root grows everything else.-!"
       },
       {
-        "txt":"Allow everything template:!n!`block.kratha-heart.allowRoot:true!nblock.kratha-root.allowRoot:true!nblock.kratha-root.allowDrill:true!nblock.kratha-root.allowEye:true!nblock.kratha-root.allowSkewer:true!nblock.kratha-root.allowCradle:true`!"
+        "txt":"Allow everything template:!n!`block.kratha-heart.allowRoot:true!nblock.kratha-root.allowAll:true`!"
       },
       {
         "section":"List of allows"
       },
       {
-        "txt":"Currently, there are just 5:"
+        "txt":"Currently, there are just 6:"
       },
       {
         "list":{
-          "contents":["allowRoot","allowDrill","allowEye","allowSkewer","allowCradle"],
+          "contents":["allowRoot","allowDrill","allowEye","allowSkewer","allowTrim","allowCradle"],
           "code":true
         }
       },
@@ -212,7 +227,7 @@
         "txt":"(And the heart, as it needs to be allowed to grow root)"
       },
       {
-        "txt":"!#There's also !`allowAll`!. however, this will force ALL allows to be true even if you explicitly set an allow to !`false`!.#!!n!-^ This is coming in 0.3, does not exist in 0.21.-!"
+        "txt":"There's also !`allowAll`!. however, this will force ALL allows to be true even if you explicitly set an allow to !`false`!."
       },
       {
         "section":"Marker"
